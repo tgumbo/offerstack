@@ -1,8 +1,9 @@
-
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { FileText, Users, Globe, Target, ArrowRight } from 'lucide-react';
+import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
+import {Button} from '@/components/ui/button';
+import {ArrowRight, Globe, Target, Users} from 'lucide-react';
 import Link from 'next/link'
+import Header from "@/app/(static)/components/Header";
+import Footer from "@/app/(static)/components/Footer";
 
 const About = () => {
     const team = [
@@ -24,33 +25,16 @@ const About = () => {
     ];
 
     const stats = [
-        { number: "500+", label: "Companies Trust Us" },
-        { number: "10,000+", label: "Offers Created" },
-        { number: "4", label: "Countries Served" },
-        { number: "98%", label: "Customer Satisfaction" }
+        {number: "500+", label: "Companies Trust Us"},
+        {number: "10,000+", label: "Offers Created"},
+        {number: "4", label: "Countries Served"},
+        {number: "98%", label: "Customer Satisfaction"}
     ];
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
             {/* Header */}
-            <header className="border-b bg-white/80 backdrop-blur-sm">
-                <div className="container mx-auto px-4 py-4">
-                    <div className="flex items-center justify-between">
-                        <Link href="/" className="flex items-center space-x-3">
-                            <div className="bg-gradient-to-r from-blue-600 to-green-600 p-2 rounded-lg">
-                                <FileText className="h-6 w-6 text-white" />
-                            </div>
-                            <div>
-                                <h1 className="text-2xl font-bold text-gray-900">OfferStack</h1>
-                                <p className="text-sm text-gray-600">About Us</p>
-                            </div>
-                        </Link>
-                        <Link href="/" className="text-blue-600 hover:text-blue-700">
-                            Back to Home
-                        </Link>
-                    </div>
-                </div>
-            </header>
+            <Header/>
 
             <div className="container mx-auto px-4 py-8">
                 {/* Hero Section */}
@@ -82,7 +66,7 @@ const About = () => {
                     <Card className="border-0 shadow-lg">
                         <CardHeader>
                             <CardTitle className="flex items-center gap-2">
-                                <Target className="h-5 w-5 text-blue-600" />
+                                <Target className="h-5 w-5 text-blue-600"/>
                                 Our Mission
                             </CardTitle>
                         </CardHeader>
@@ -98,7 +82,7 @@ const About = () => {
                     <Card className="border-0 shadow-lg">
                         <CardHeader>
                             <CardTitle className="flex items-center gap-2">
-                                <Globe className="h-5 w-5 text-blue-600" />
+                                <Globe className="h-5 w-5 text-blue-600"/>
                                 Our Vision
                             </CardTitle>
                         </CardHeader>
@@ -119,8 +103,9 @@ const About = () => {
                         {team.map((member, index) => (
                             <Card key={index} className="border-0 shadow-lg text-center">
                                 <CardHeader>
-                                    <div className="w-20 h-20 bg-gradient-to-r from-blue-100 to-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                                        <Users className="h-8 w-8 text-blue-600" />
+                                    <div
+                                        className="w-20 h-20 bg-gradient-to-r from-blue-100 to-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                        <Users className="h-8 w-8 text-blue-600"/>
                                     </div>
                                     <CardTitle className="text-lg">{member.name}</CardTitle>
                                     <p className="text-blue-600 font-semibold">{member.role}</p>
@@ -143,12 +128,15 @@ const About = () => {
                         <Button size="lg" variant="secondary" asChild>
                             <Link href="/signup">
                                 Get Started Today
-                                <ArrowRight className="ml-2 h-4 w-4" />
+                                <ArrowRight className="ml-2 h-4 w-4"/>
                             </Link>
                         </Button>
                     </CardContent>
                 </Card>
             </div>
+
+            {/* Footer */}
+            <Footer/>
         </div>
     );
 };

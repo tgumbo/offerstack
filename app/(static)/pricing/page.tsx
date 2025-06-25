@@ -1,9 +1,10 @@
-
-import { Check, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import  Link  from 'next/link';
+import {Check, X} from 'lucide-react';
+import {Button} from '@/components/ui/button';
+import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
+import {Badge} from '@/components/ui/badge';
+import Link from 'next/link';
+import Header from "@/app/(static)/components/Header";
+import Footer from "@/app/(static)/components/Footer";
 
 const Pricing = () => {
     const plans = [
@@ -90,32 +91,7 @@ const Pricing = () => {
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Header */}
-            <header className="bg-white shadow-sm">
-                <div className="container mx-auto px-4 py-4">
-                    <div className="flex items-center justify-between">
-                        <Link href="/" className="flex items-center space-x-3">
-                            <div className="bg-gradient-to-r from-blue-600 to-green-600 p-2 rounded-lg">
-                                <svg className="h-6 w-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
-                                    <path fillRule="evenodd" d="M4 5a2 2 0 012-2v1a1 1 0 001 1h6a1 1 0 001-1V3a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3z" clipRule="evenodd"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h1 className="text-xl font-bold text-gray-900">OfferStack</h1>
-                                <p className="text-sm text-gray-600">Hiring made simple</p>
-                            </div>
-                        </Link>
-                        <nav className="hidden md:flex items-center space-x-8">
-                            <Link href="/how-it-works" className="text-gray-600 hover:text-blue-600">How It Works</Link>
-                            <Link href="/pricing" className="text-blue-600 font-medium">Pricing</Link>
-                            <Link href="/login" className="text-gray-600 hover:text-blue-600">Login</Link>
-                            <Link href="/signup">
-                                <Button>Get Started</Button>
-                            </Link>
-                        </nav>
-                    </div>
-                </div>
-            </header>
+            <Header/>
 
             {/* Hero Section */}
             <section className="py-16 bg-white">
@@ -124,7 +100,8 @@ const Pricing = () => {
                         Simple, Transparent Pricing
                     </h1>
                     <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                        Choose the perfect plan for your hiring needs. All plans include our core features with no hidden fees.
+                        Choose the perfect plan for your hiring needs. All plans include our core features with no
+                        hidden fees.
                     </p>
                     <div className="inline-flex items-center bg-gray-100 rounded-lg p-1">
                         <span className="px-4 py-2 text-sm font-medium text-gray-600">Monthly</span>
@@ -140,9 +117,11 @@ const Pricing = () => {
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
                         {plans.map((plan, index) => (
-                            <Card key={index} className={`relative ${plan.popular ? 'border-blue-500 shadow-xl scale-105' : 'border-gray-200'}`}>
+                            <Card key={index}
+                                  className={`relative ${plan.popular ? 'border-blue-500 shadow-xl scale-105' : 'border-gray-200'}`}>
                                 {plan.popular && (
-                                    <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white">
+                                    <Badge
+                                        className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white">
                                         Most Popular
                                     </Badge>
                                 )}
@@ -165,13 +144,13 @@ const Pricing = () => {
                                     <div className="space-y-3">
                                         {plan.features.map((feature, featureIndex) => (
                                             <div key={featureIndex} className="flex items-center">
-                                                <Check className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
+                                                <Check className="h-5 w-5 text-green-500 mr-3 flex-shrink-0"/>
                                                 <span className="text-sm text-gray-700">{feature}</span>
                                             </div>
                                         ))}
                                         {plan.limitations.map((limitation, limitationIndex) => (
                                             <div key={limitationIndex} className="flex items-center">
-                                                <X className="h-5 w-5 text-gray-400 mr-3 flex-shrink-0" />
+                                                <X className="h-5 w-5 text-gray-400 mr-3 flex-shrink-0"/>
                                                 <span className="text-sm text-gray-500">{limitation}</span>
                                             </div>
                                         ))}
@@ -229,6 +208,9 @@ const Pricing = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Footer */}
+            <Footer/>
 
         </div>
     );

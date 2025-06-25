@@ -1,30 +1,13 @@
-
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { FileText, Scale, Users, AlertTriangle } from 'lucide-react';
-import Link from 'next/link'
+import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
+import {AlertTriangle, FileText, Scale, Users} from 'lucide-react';
+import Header from "@/app/(static)/components/Header";
+import Footer from "@/app/(static)/components/Footer";
 
 const Terms = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
             {/* Header */}
-            <header className="border-b bg-white/80 backdrop-blur-sm">
-                <div className="container mx-auto px-4 py-4">
-                    <div className="flex items-center justify-between">
-                        <Link href="/" className="flex items-center space-x-3">
-                            <div className="bg-gradient-to-r from-blue-600 to-green-600 p-2 rounded-lg">
-                                <FileText className="h-6 w-6 text-white" />
-                            </div>
-                            <div>
-                                <h1 className="text-2xl font-bold text-gray-900">OfferStack</h1>
-                                <p className="text-sm text-gray-600">Terms of Service</p>
-                            </div>
-                        </Link>
-                        <Link href="/" className="text-blue-600 hover:text-blue-700">
-                            Back to Home
-                        </Link>
-                    </div>
-                </div>
-            </header>
+            <Header/>
 
             <div className="container mx-auto px-4 py-8">
                 <div className="max-w-4xl mx-auto">
@@ -37,7 +20,7 @@ const Terms = () => {
                         <Card>
                             <CardHeader>
                                 <CardTitle className="flex items-center gap-2">
-                                    <Scale className="h-5 w-5 text-blue-600" />
+                                    <Scale className="h-5 w-5 text-blue-600"/>
                                     Acceptance of Terms
                                 </CardTitle>
                             </CardHeader>
@@ -53,7 +36,7 @@ const Terms = () => {
                         <Card>
                             <CardHeader>
                                 <CardTitle className="flex items-center gap-2">
-                                    <Users className="h-5 w-5 text-blue-600" />
+                                    <Users className="h-5 w-5 text-blue-600"/>
                                     User Responsibilities
                                 </CardTitle>
                             </CardHeader>
@@ -74,13 +57,14 @@ const Terms = () => {
                         <Card>
                             <CardHeader>
                                 <CardTitle className="flex items-center gap-2">
-                                    <FileText className="h-5 w-5 text-blue-600" />
+                                    <FileText className="h-5 w-5 text-blue-600"/>
                                     Service Description
                                 </CardTitle>
                             </CardHeader>
                             <CardContent className="space-y-4">
                                 <p className="text-gray-700">
-                                    OfferStack provides a platform for creating, managing, and tracking job offer letters.
+                                    OfferStack provides a platform for creating, managing, and tracking job offer
+                                    letters.
                                     Our service includes:
                                 </p>
                                 <ul className="list-disc list-inside space-y-2 text-gray-700">
@@ -95,7 +79,7 @@ const Terms = () => {
                         <Card>
                             <CardHeader>
                                 <CardTitle className="flex items-center gap-2">
-                                    <AlertTriangle className="h-5 w-5 text-blue-600" />
+                                    <AlertTriangle className="h-5 w-5 text-blue-600"/>
                                     Limitation of Liability
                                 </CardTitle>
                             </CardHeader>
@@ -124,6 +108,9 @@ const Terms = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Footer */}
+            <Footer/>
         </div>
     );
 };

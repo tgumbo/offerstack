@@ -97,10 +97,6 @@ const Footer = () => {
                                 hello@offerstack.com
                             </li>
                             <li className="flex items-center">
-                                <Phone className="h-4 w-4 mr-2 text-gray-400"/>
-                                +27 11 123 4567
-                            </li>
-                            <li className="flex items-center">
                                 <MapPin className="h-4 w-4 mr-2 text-gray-400"/>
                                 Cape Town, South Africa
                             </li>
@@ -113,15 +109,6 @@ const Footer = () => {
                     <p className="text-sm text-gray-500">
                         © 2024 OfferStack. All rights reserved.
                     </p>
-                    <div className="flex items-center space-x-6 mt-4 md:mt-0">
-                        <div className="flex items-center text-sm text-gray-500">
-                            <MapPin className="h-4 w-4 mr-1"/>
-                            Serving ZA • ZW • BW • NA
-                        </div>
-                        <div className="text-sm text-gray-500">
-                            Made with ❤️ in Africa
-                        </div>
-                    </div>
                 </div>
             </div>
         </footer>

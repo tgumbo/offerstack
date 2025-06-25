@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import {OfferCard} from "@/components/OfferCard";
 import Footer from "@/app/(static)/components/Footer";
+import Header from "@/app/(static)/components/Header";
 
 // Mock data for demo
 const mockOffers = [
@@ -137,47 +138,7 @@ const Index = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
             {/* Header */}
-            <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-                <div className="container mx-auto px-4 py-4">
-                    <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-3">
-                            <div className="bg-gradient-to-r from-blue-600 to-green-600 p-2 rounded-lg">
-                                <FileText className="h-6 w-6 text-white"/>
-                            </div>
-                            <div>
-                                <h1 className="text-2xl font-bold text-gray-900">OfferStack</h1>
-                                <p className="text-sm text-gray-600">Hiring made simple</p>
-                            </div>
-                        </div>
-
-                        {/* Navigation */}
-                        <nav className="hidden md:flex items-center space-x-6">
-                            <Link href="/how-it-works" className="text-gray-600 hover:text-gray-900 transition-colors">
-                                How It Works
-                            </Link>
-                            <Link href="/pricing" className="text-gray-600 hover:text-gray-900 transition-colors">
-                                Pricing
-                            </Link>
-                            <Link href="/about" className="text-gray-600 hover:text-gray-900 transition-colors">
-                                About
-                            </Link>
-                            <Link href="/contact" className="text-gray-600 hover:text-gray-900 transition-colors">
-                                Contact
-                            </Link>
-                        </nav>
-
-                        <div className="flex gap-2">
-                            <Button variant="outline" asChild>
-                                <Link href="/login">Sign In</Link>
-                            </Button>
-                            <Button asChild
-                                    className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700">
-                                <Link href="/signup">Start Free Trial</Link>
-                            </Button>
-                        </div>
-                    </div>
-                </div>
-            </header>
+            <Header/>
 
             <div className="container mx-auto px-4">
                 {/* Hero Section */}
@@ -407,7 +368,7 @@ const Index = () => {
                     </div>
                 </section>
             </div>
-
+            {/* Footer */}
             <Footer/>
         </div>
     );

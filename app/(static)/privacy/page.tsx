@@ -1,30 +1,13 @@
-
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { FileText, Shield, Eye, Database } from 'lucide-react';
-import Link from 'next/link'
+import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
+import {Database, Eye, Shield} from 'lucide-react';
+import Header from "@/app/(static)/components/Header";
+import Footer from "@/app/(static)/components/Footer";
 
 const Privacy = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
             {/* Header */}
-            <header className="border-b bg-white/80 backdrop-blur-sm">
-                <div className="container mx-auto px-4 py-4">
-                    <div className="flex items-center justify-between">
-                        <Link href="/" className="flex items-center space-x-3">
-                            <div className="bg-gradient-to-r from-blue-600 to-green-600 p-2 rounded-lg">
-                                <FileText className="h-6 w-6 text-white" />
-                            </div>
-                            <div>
-                                <h1 className="text-2xl font-bold text-gray-900">OfferStack</h1>
-                                <p className="text-sm text-gray-600">Privacy Policy</p>
-                            </div>
-                        </Link>
-                        <Link href="/" className="text-blue-600 hover:text-blue-700">
-                            Back to Home
-                        </Link>
-                    </div>
-                </div>
-            </header>
+            <Header/>
 
             <div className="container mx-auto px-4 py-8">
                 <div className="max-w-4xl mx-auto">
@@ -37,13 +20,14 @@ const Privacy = () => {
                         <Card>
                             <CardHeader>
                                 <CardTitle className="flex items-center gap-2">
-                                    <Shield className="h-5 w-5 text-blue-600" />
+                                    <Shield className="h-5 w-5 text-blue-600"/>
                                     Information We Collect
                                 </CardTitle>
                             </CardHeader>
                             <CardContent className="space-y-4">
                                 <p className="text-gray-700">
-                                    We collect information you provide directly to us, such as when you create an account,
+                                    We collect information you provide directly to us, such as when you create an
+                                    account,
                                     use our services, or contact us for support.
                                 </p>
                                 <ul className="list-disc list-inside space-y-2 text-gray-700">
@@ -58,7 +42,7 @@ const Privacy = () => {
                         <Card>
                             <CardHeader>
                                 <CardTitle className="flex items-center gap-2">
-                                    <Eye className="h-5 w-5 text-blue-600" />
+                                    <Eye className="h-5 w-5 text-blue-600"/>
                                     How We Use Your Information
                                 </CardTitle>
                             </CardHeader>
@@ -78,7 +62,7 @@ const Privacy = () => {
                         <Card>
                             <CardHeader>
                                 <CardTitle className="flex items-center gap-2">
-                                    <Database className="h-5 w-5 text-blue-600" />
+                                    <Database className="h-5 w-5 text-blue-600"/>
                                     Data Security
                                 </CardTitle>
                             </CardHeader>
@@ -112,6 +96,9 @@ const Privacy = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Footer */}
+            <Footer/>
         </div>
     );
 };

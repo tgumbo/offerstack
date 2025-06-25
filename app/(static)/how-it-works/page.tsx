@@ -1,9 +1,10 @@
-
 import Link from 'next/link'
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { FileText, Send, PenTool, CheckCircle, Clock, Users, ArrowRight, Play } from "lucide-react";
+import {Button} from "@/components/ui/button";
+import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
+import {Badge} from "@/components/ui/badge";
+import {ArrowRight, CheckCircle, Clock, FileText, PenTool, Play, Send, Users} from "lucide-react";
+import Footer from "@/app/(static)/components/Footer";
+import Header from "@/app/(static)/components/Header";
 
 const HowItWorks = () => {
     const steps = [
@@ -69,40 +70,19 @@ const HowItWorks = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
             {/* Header */}
-            <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-                <div className="container mx-auto px-4 py-4">
-                    <div className="flex items-center justify-between">
-                        <Link href="/" className="flex items-center space-x-3">
-                            <div className="bg-gradient-to-r from-blue-600 to-green-600 p-2 rounded-lg">
-                                <FileText className="h-6 w-6 text-white" />
-                            </div>
-                            <div>
-                                <h1 className="text-2xl font-bold text-gray-900">OfferStack</h1>
-                                <p className="text-sm text-gray-600">Hiring made simple</p>
-                            </div>
-                        </Link>
-                        <div className="flex gap-2">
-                            <Button variant="outline" asChild>
-                                <Link href="/login">Sign In</Link>
-                            </Button>
-                            <Button asChild className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700">
-                                <Link href="/signup">Start Free Trial</Link>
-                            </Button>
-                        </div>
-                    </div>
-                </div>
-            </header>
+            <Header/>
 
             <div className="container mx-auto px-4">
                 {/* Hero Section */}
                 <section className="py-20 text-center">
                     <Badge variant="secondary" className="mb-6 px-4 py-2">
-                        <Play className="w-4 h-4 mr-2" />
+                        <Play className="w-4 h-4 mr-2"/>
                         See how it works in 4 simple steps
                     </Badge>
                     <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
                         From Offer to
-                        <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent block">
+                        <span
+                            className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent block">
               Signed Contract
             </span>
                     </h1>
@@ -110,10 +90,11 @@ const HowItWorks = () => {
                         Streamline your entire hiring process with our simple 4-step workflow.
                         Create, send, and get offers signed in minutes, not weeks.
                     </p>
-                    <Button size="lg" asChild className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-lg px-8 py-4">
+                    <Button size="lg" asChild
+                            className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-lg px-8 py-4">
                         <Link href="/signup">
                             Start Your Free Trial
-                            <ArrowRight className="ml-2 h-5 w-5" />
+                            <ArrowRight className="ml-2 h-5 w-5"/>
                         </Link>
                     </Button>
                 </section>
@@ -126,15 +107,17 @@ const HowItWorks = () => {
                             const isEven = index % 2 === 0;
 
                             return (
-                                <div key={step.step} className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12`}>
+                                <div key={step.step}
+                                     className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12`}>
                                     {/* Content */}
                                     <div className="flex-1 space-y-6">
                                         <div className="flex items-center gap-4">
-                                            <div className="bg-gradient-to-r from-blue-600 to-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg">
+                                            <div
+                                                className="bg-gradient-to-r from-blue-600 to-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg">
                                                 {step.step}
                                             </div>
                                             <Badge appearance="stroke" className="text-sm">
-                                                <Clock className="w-3 h-3 mr-1" />
+                                                <Clock className="w-3 h-3 mr-1"/>
                                                 {step.time}
                                             </Badge>
                                         </div>
@@ -147,7 +130,7 @@ const HowItWorks = () => {
                                         <div className="grid grid-cols-2 gap-3">
                                             {step.features.map((feature, idx) => (
                                                 <div key={idx} className="flex items-center gap-2">
-                                                    <CheckCircle className="w-4 h-4 text-green-600" />
+                                                    <CheckCircle className="w-4 h-4 text-green-600"/>
                                                     <span className="text-sm text-gray-700">{feature}</span>
                                                 </div>
                                             ))}
@@ -156,10 +139,12 @@ const HowItWorks = () => {
 
                                     {/* Visual */}
                                     <div className="flex-1 flex justify-center">
-                                        <Card className="w-full max-w-md border-0 shadow-2xl bg-gradient-to-br from-white to-gray-50">
+                                        <Card
+                                            className="w-full max-w-md border-0 shadow-2xl bg-gradient-to-br from-white to-gray-50">
                                             <CardHeader className="text-center pb-4">
-                                                <div className="bg-gradient-to-r from-blue-100 to-green-100 p-6 rounded-full w-fit mx-auto mb-4">
-                                                    <Icon className="h-12 w-12 text-blue-600" />
+                                                <div
+                                                    className="bg-gradient-to-r from-blue-100 to-green-100 p-6 rounded-full w-fit mx-auto mb-4">
+                                                    <Icon className="h-12 w-12 text-blue-600"/>
                                                 </div>
                                                 <CardTitle className="text-xl">{step.title}</CardTitle>
                                             </CardHeader>
@@ -182,7 +167,8 @@ const HowItWorks = () => {
                 <section className="py-16">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Teams Love OfferStack</h2>
-                        <p className="text-lg text-gray-600">Built specifically for modern hiring teams in Southern Africa</p>
+                        <p className="text-lg text-gray-600">Built specifically for modern hiring teams in Southern
+                            Africa</p>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8">
@@ -191,8 +177,9 @@ const HowItWorks = () => {
                             return (
                                 <Card key={index} className="border-0 shadow-lg text-center">
                                     <CardHeader>
-                                        <div className="bg-gradient-to-r from-blue-100 to-green-100 p-4 rounded-full w-fit mx-auto mb-4">
-                                            <Icon className="h-8 w-8 text-blue-600" />
+                                        <div
+                                            className="bg-gradient-to-r from-blue-100 to-green-100 p-4 rounded-full w-fit mx-auto mb-4">
+                                            <Icon className="h-8 w-8 text-blue-600"/>
                                         </div>
                                         <CardTitle className="text-xl">{benefit.title}</CardTitle>
                                     </CardHeader>
@@ -223,7 +210,8 @@ const HowItWorks = () => {
 
                 {/* CTA Section */}
                 <section className="py-20">
-                    <div className="text-center bg-gradient-to-r from-blue-600 to-green-600 rounded-2xl p-12 text-white">
+                    <div
+                        className="text-center bg-gradient-to-r from-blue-600 to-green-600 rounded-2xl p-12 text-white">
                         <h2 className="text-4xl font-bold mb-4">Ready to streamline your hiring?</h2>
                         <p className="text-xl mb-8 opacity-90">
                             Join hundreds of companies who've transformed their offer process with OfferStack
@@ -232,13 +220,18 @@ const HowItWorks = () => {
                             <Button size="lg" variant="secondary" asChild className="text-lg px-8 py-4">
                                 <Link href="/signup">Start Free Trial</Link>
                             </Button>
-                            <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-4" asChild>
+                            <Button size="lg" variant="outline"
+                                    className="bg-transparent border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-4"
+                                    asChild>
                                 <Link href="/contact">Schedule Demo</Link>
                             </Button>
                         </div>
                     </div>
                 </section>
             </div>
+
+            {/* Footer */}
+            <Footer/>
 
         </div>
     );
