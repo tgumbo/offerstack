@@ -155,6 +155,9 @@ const Index = () => {
                             <Link href="/how-it-works" className="text-gray-600 hover:text-gray-900 transition-colors">
                                 How It Works
                             </Link>
+                            <Link href="/pricing" className="text-gray-600 hover:text-gray-900 transition-colors">
+                                Pricing
+                            </Link>
                             <Link href="/about" className="text-gray-600 hover:text-gray-900 transition-colors">
                                 About
                             </Link>
