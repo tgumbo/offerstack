@@ -35,7 +35,7 @@ const AppLayout = ({children}: { children: ReactNode }) => {
                 <div className="grow" role="content">
                     {!pathname.includes('/public-profile/') &&
                         !pathname.includes('/user-management') &&
-                        !pathname.includes('/store-client') && (
+                        !pathname.includes('/dashboard') && (
                             <Toolbar>
                                 <ToolbarHeading/>
 
