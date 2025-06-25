@@ -187,8 +187,8 @@ const Index = () => {
                             Hire Faster with
                             <span
                                 className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent block">
-                Smart Offer Management
-              </span>
+                                Smart Offer Management
+                            </span>
                         </h2>
                         <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
                             The all-in-one platform for creating, sending, and tracking job offers.
