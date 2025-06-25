@@ -63,6 +63,12 @@ export const MENU_SIDEBAR: MenuConfig = [
       { title: 'Dark Sidebar', path: '/dark-sidebar' },
     ],
   },
+  {
+    title: 'Offers',
+    children: [
+      {title: 'Offers Management', path: '/offers'}
+    ]
+  },
   { heading: 'User' },
   {
     title: 'Public Profile',
