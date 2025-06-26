@@ -1,0 +1,24 @@
+'use client';
+
+import { Fragment } from 'react';
+import { toAbsoluteUrl } from '@/lib/helpers';
+import { Container } from '@/components/common/container';
+import { Teams } from './components';
+
+export default function ProfileTeamsPage() {
+  const image = (
+    <img
+      src={toAbsoluteUrl('/media/avatars/300-1.png')}
+      className="rounded-full border-3 border-green-500 h-[100px] shrink-0"
+      alt="image"
+    />
+  );
+
+  return (
+    <Fragment>
+      <Container>
+        <Teams />
+      </Container>
+    </Fragment>
+  );
+}
