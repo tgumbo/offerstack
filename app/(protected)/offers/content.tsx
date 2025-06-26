@@ -48,7 +48,7 @@ export interface ITeamCrewContentItem {
 type ITeamCrewContentItems = Array<ITeamCrewContentItem>;
 
 export function NetworkUserCardsTeamCrewContent() {
-    const [activeTab, setActiveTab] = useState('cards');
+
     const [searchInput, setSearchInput] = useState('');
 
     const items: ITeamCrewContentItems = [
@@ -306,7 +306,7 @@ export function NetworkUserCardsTeamCrewContent() {
         <div className="flex flex-col items-stretch gap-5 lg:gap-7.5">
             <div className="flex flex-wrap items-center gap-5 justify-between">
                 <h3 className="text-base text-mono font-medium">
-                    Showing {items.length} Users
+                    Showing {items.length} Offers
                 </h3>
                 <div className="flex items-center flex-wrap gap-5">
                     <div className="flex items-center gap-2.5">
@@ -343,39 +343,9 @@ export function NetworkUserCardsTeamCrewContent() {
                             className="ps-9 w-40"
                         />
                     </div>
-                    <ToggleGroup
-                        type="single"
-                        variant="outline"
-                        value={activeTab}
-                        onValueChange={(value) => {
-                            if (value) setActiveTab(value);
-                        }}
-                    >
-                        <ToggleGroupItem value="cards">
-                            <LayoutGrid size={16}/>
-                        </ToggleGroupItem>
-                        <ToggleGroupItem value="list">
-                            <List size={16}/>
-                        </ToggleGroupItem>
-                    </ToggleGroup>
+                
                 </div>
             </div>
-            {activeTab === 'cards' ? (
-                <div id="team_crew_card" className="flex flex-col gap-5 lg:gap-7.5">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-7.5">
-                        {items.map((item, index) => {
-                            return renderItem(item, index);
-                        })}
-                    </div>
-                    <div className="flex justify-center">
-                        <Button mode="link" underlined="dashed" asChild>
-                            <Link href="/public-profile/projects/3-columns">
-                                Show more projects
-                            </Link>
-                        </Button>
-                    </div>
-                </div>
-            ) : (
                 <div id="team_crew_list">
                     <div className="grid grid-cols-1 gap-5 lg:gap-7.5">
                         {items.map((item, index) => {
@@ -390,7 +360,7 @@ export function NetworkUserCardsTeamCrewContent() {
                         </Button>
                     </div>
                 </div>
-            )}
+
         </div>
     );
 }
