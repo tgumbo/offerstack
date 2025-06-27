@@ -11,11 +11,15 @@ import {
   List,
   LucideIcon,
   MessageSquareCode,
+  Search,
+  Settings2,
   ShieldOff,
   Sparkles,
   Star,
   Users,
 } from 'lucide-react';
+import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue,} from '@/components/ui/select';
+import {Input} from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
 interface ITeamsItem {
@@ -41,7 +45,8 @@ interface ITeamsItem {
 type ITeamsItems = Array<ITeamsItem>;
 
 const Teams = () => {
-  const [activeView, setActiveView] = useState('cards');
+
+  const [searchInput, setSearchInput] = useState('');
 
   const items: ITeamsItems = [
     {
@@ -240,10 +245,47 @@ const Teams = () => {
 
   return (
     <div className="flex flex-col items-stretch gap-5 lg:gap-7.5">
-      <div className="flex flex-wrap items-center gap-5 justify-between">
-        <h3 className="text-lg text-foreground font-semibold">
-          {items.length} Teams
-        </h3>
+     <div className="flex flex-wrap items-center gap-5 justify-between">
+                <h3 className="text-base text-mono font-medium">
+                    Showing {items.length} Offers
+                </h3>
+                <div className="flex items-center flex-wrap gap-5">
+                    <div className="flex items-center gap-2.5">
+                        <Select defaultValue="active">
+                            <SelectTrigger className="w-28">
+                                <SelectValue placeholder="Select"/>
+                            </SelectTrigger>
+                            <SelectContent className="w-32">
+                                <SelectItem value="active">Active</SelectItem>
+                                <SelectItem value="disabled">Disabled</SelectItem>
+                                <SelectItem value="pending">Pending</SelectItem>
+                            </SelectContent>
+                        </Select>
+                        <Select defaultValue="latest">
+                            <SelectTrigger className="w-28">
+                                <SelectValue placeholder="Select"/>
+                            </SelectTrigger>
+                            <SelectContent className="w-32">
+                                <SelectItem value="latest">Latest</SelectItem>
+                                <SelectItem value="older">Older</SelectItem>
+                                <SelectItem value="oldest">Oldest</SelectItem>
+                            </SelectContent>
+                        </Select>
+                        <Button>
+                            <Settings2 size={16}/> Filters
+                        </Button>
+                    </div>
+                    <div className="flex relative">
+                        <Search className="size-4 text-muted-foreground absolute start-3 top-1/2 -translate-y-1/2"/>
+                        <Input
+                            placeholder="Type name, team"
+                            value={searchInput}
+                            onChange={(e) => setSearchInput(e.target.value)}
+                            className="ps-9 w-40"
+                        />
+                    </div>
+                
+                </div>
         
       </div>
 
