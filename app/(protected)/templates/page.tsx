@@ -1,9 +1,8 @@
 'use client';
 
-import { Fragment } from 'react';
-import { toAbsoluteUrl } from '@/lib/helpers';
-import { Container } from '@/components/common/container';
-import { Teams } from './components';
+import {Fragment, useState} from 'react';
+import {Container} from '@/components/common/container';
+import {Teams} from './components';
 import {
     Toolbar,
     ToolbarActions,
@@ -11,36 +10,39 @@ import {
     ToolbarHeading,
     ToolbarPageTitle,
 } from '@/partials/common/toolbar';
-import { Button } from '@/components/ui/button';
+import {Button} from '@/components/ui/button';
+import UserAddDialog from "@/app/(protected)/templates/components/user-add-dialog";
 
 export default function ProfileTeamsPage() {
-  const image = (
-    <img
-      src={toAbsoluteUrl('/media/avatars/300-1.png')}
-      className="rounded-full border-3 border-green-500 h-[100px] shrink-0"
-      alt="image"
-    />
-  );
+    const [inviteDialogOpen, setInviteDialogOpen] = useState(false);
 
-  return (
-    <Fragment>
-         <Container>
-                    <Toolbar>
-                        <ToolbarHeading>
-                            <ToolbarPageTitle />
-                            <ToolbarDescription>
-                                Central Hub for Personal Customization
-                            </ToolbarDescription>
-                        </ToolbarHeading>
-                        <ToolbarActions>
-                            <Button variant="primary">New Offer</Button>
-                        </ToolbarActions>
-                    </Toolbar>
-                </Container>
-                
-      <Container>
-        <Teams />
-      </Container>
-    </Fragment>
-  );
+    return (
+        <Fragment>
+            <Container>
+                <Toolbar>
+                    <ToolbarHeading>
+                        <ToolbarPageTitle/>
+                        <ToolbarDescription>
+                            Central Hub for Personal Customization
+                        </ToolbarDescription>
+                    </ToolbarHeading>
+                    <ToolbarActions>
+                        <Button variant="primary"
+                                onClick={() => {
+                                    setInviteDialogOpen(true);
+                                }}>New Offer</Button>
+                    </ToolbarActions>
+                </Toolbar>
+            </Container>
+
+            <Container>
+                <Teams/>
+            </Container>
+
+            <UserAddDialog
+                open={inviteDialogOpen}
+                closeDialog={() => setInviteDialogOpen(false)}
+            />
+        </Fragment>
+    );
 }
